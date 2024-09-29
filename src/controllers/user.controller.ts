@@ -20,8 +20,7 @@ export class UserController {
     return this.userService.findOne(id);
   }
 
-  @UseGuards(AuthGuard('jwt'))
-  @Post()
+  @Post('signup')
   async create(@Body() createUserDto: CreateUserDto) {
     return this.userService.create(createUserDto);
   }
